@@ -1,0 +1,25 @@
+
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 0.2
+        Label:
+            text:"Registrarse en el sistema"
+            halign:"left"
+        Button:
+            text:"Volver"
+            on_press:
+                app.root.current = "main"
+                app.root.transition.direction = "right"
+
+            size_hint_x:0.2
+    CameraOpenCv:
+        id: camera_register
+        size_hint_y: 0.6
+    Button:
+        text: "Registrarse"
+        on_press:
+            app.screen_register.register_user()
+        size_hint_y: 0.2
+        halign: "center"

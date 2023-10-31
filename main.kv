@@ -1,0 +1,28 @@
+ScreenManager:
+    Screen:
+        name:"main"
+        BoxLayout:
+
+            orientation:"vertical"
+            Label:
+                text: "Menu Inicio"
+                size_hint_y : 0.2
+                font_size: 30
+                halign: "left"
+                valign: "top"
+            Image:
+                size_hint_y:0.5
+                source: "assets/cara_fachera.png"
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y : 0.3
+                Button:
+                    text:"Login"
+                    on_press:
+                        app.root.current = "login"
+                        app.root.transition.direction = "left"
+                Button:
+                    text:"Register"
+                    on_press:
+                        app.root.current = "register"
+                        app.root.transition.direction = "right"

@@ -1,0 +1,26 @@
+
+BoxLayout:
+
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 0.2
+        Label:
+            text:"Ingresar al sistema"
+            halign:"left"
+        Button:
+            text:"Volver"
+            on_press:
+                app.root.current = "main"
+                app.root.transition.direction = "left"
+
+            size_hint_x:0.2
+    CameraOpenCv:
+        id: camera_login
+        size_hint_y: 0.6
+    Button:
+        text: "Login"
+        on_press:
+            app.ir_al_menu()
+        size_hint_y: 0.2
+        halign: "center"
