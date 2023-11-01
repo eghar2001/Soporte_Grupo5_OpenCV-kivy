@@ -8,8 +8,9 @@ from kivy.graphics.texture import Texture
 from kivy.uix.camera import Camera
 import mediapipe as mp
 
+from rutas import ruta_videos
 
-ruta_videos = "videos_grabados\\"
+
 class CameraOpenCv(Camera):
     """Componente que carga la camara usando opencv"""
     def __init__(self, hasFacialRecognition = False, hasHandsRecognition = False, **kwargs):
@@ -38,12 +39,15 @@ class CameraOpenCv(Camera):
 
     def start_video(self, *args):
         self._capture = cv2.VideoCapture(0)
+
+
         self._schedule = Clock.schedule_interval(self.load_video, 1 / 24)
 
     def stop_video(self, *args):
         if self._schedule:
             self._schedule.cancel()
             self._capture.release()
+
     def start_recording(self, *args):
         self.recording = True
         fecha_hora_actual = str(datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))

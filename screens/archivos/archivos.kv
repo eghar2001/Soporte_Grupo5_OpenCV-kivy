@@ -1,0 +1,15 @@
+BoxLayout:
+    orientation:"vertical"
+    FileChooserListView:
+        size_hint_y:0.8
+        filters: ['*.jpg', '*.png', '*.mp4', '*.avi','videos_grabados', 'fotos_tomadas']
+        id:filechooser
+
+
+    Button:
+        text:"Volver"
+        size_hint_y: 0.2
+
+        on_press:
+            app.root.current = "menu"
+            app.root.transition.direction: "right"
